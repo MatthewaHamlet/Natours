@@ -1,0 +1,161 @@
+• Each property has an initial value, used if nothing is declared (and if no inheritance);
+• Browser specify a root-font-size for each page (usually 16px);
+• Percentages and relative values are always converted to pixels;
+• Percentages are measured relative to the•ir parent's font-size, if used to specify font-size;
+• Percentages are measured relative to their parent's width, if used to specify length;
+• em's are measured relative to their parent font-size, if used to specify font-size;
+• em's are measured relative to the current font-size, if used to specify lengths;
+• rem's are always measured relative to the document's root font-size;
+• vh and vw are simply percentage measurements of the viewpoint's height and width.
+• inheritance passes the values for some specific properties from parents to children - more maintainable code;
+• Properties related to text are inherited: font-family, font-size, color, etc;
+• The computed value of a property is what gets inherited, not the declared value.
+• Inheritance of a property only works if no one declares a value for that property;
+• The inherit keyword forces inheritance on a certain property;
+• The initial keyword resets a property to its initial value.
+
+• Use of rem's work great for media queries html {
+    font-size: 62.5%;
+}
+
+• universal selector start 
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+
+• CSS visual formatting model: Algorithm that calculates boxes and determines the layout of these boxes, for each element in the render tree, in order to determine the final layout of the page.
+
+• Factors include:
+- Dimensions of the boxes: the box model;
+- Box type: inline, block and inline-block;
+- Positioning scheme: floats and positioning;
+- Stacking contexts;
+- Other elements in render tree(such as siblings or parents);
+- Viewport size, dimensions, of images, etc.
+
+***STUDY THE BOX MODEL***
+
+Parts of the box model
+
+• Content: Text, images, etc.
+• Padding: Transparent area around the content, inside of the box;
+• Border:  Goes around the content and the padding.
+• Margin:  Space between boxes. 
+• Fill area: Area that gets filled with background color or background image.
+
+total width = right border + right padding + specified width + left padding + left border.
+total height = top border + top padding + specified height + bottom padding + bottom border.
+
+Example: height= 0 + 20px + 100px + 20px + 0 = 140px
+
+box-sizing: border-box =  total height and width.
+
+total width = specified width.
+total height = specified height.
+
+Example: height = 0 + 100px + 0 = 100px
+
+
+Box types:
+
+• Block level element
+- Elements formatted visually as blocks.
+- 100% of parent's width.
+- Vertically, one after another.
+- Box-model applies as shown below:
+
+display: block;
+(display: flex;)
+(display: list-item;)
+(display: table;)
+
+• Inline boxes 
+- Content is distributed in lines
+- Occupies only content's space
+- No line-breaks
+- No heights and widths
+- Padding and margins only horizontal (left and right)
+
+display: inline;
+
+• Inline-block boxes 
+- A mix of block and inline
+- Occupies only content's space
+- No line-breaks
+- Box-model applies as shown below:
+
+display: inline-block;
+
+
+Positioning schemes:
+
+• Normal flow 
+- Default positioning scheme.
+- Not floated.
+- Not absolutely positioned.
+- Elements laid out according to their source.
+
+Default 
+position: relative;
+
+• Floats
+- Element is removed from the normal flow.
+- Text and inline elements will wrap around the floated element.
+- The container will not adjust its height to the element.
+
+float: left;
+float: right;
+
+• Absolute positioning
+- Element is removed from the normal flow.
+- No impact on surrounding content or elements.
+- Use top, bottom, right, and left to offset the element from its relatively positioned container.
+
+position: absolute;
+position: fixed;
+
+
+Stacking contexts 
+
+z-index 
+
+TBA 
+Think --> Build --> Architect 
+
+
+Think: Think about the layout of your webpage or web app before writing code.
+Build: Build your layout in HTML and CSS with a consistent structure for naming classes.
+Architect: Create a logical Architecture for your CSS with files and folders.
+
+Component Driven Design 
+• Modular building blocks that make up interfaces.
+• Held together by the layout of the page.
+• Re-useable across a project, and between different projects.
+• Independent, allowing us to use them anyway on the page.
+
+******* ATOMIC Design******
+
+BEM 
+
+Block element modifier 
+• Block: standalone element that is meaningful on its own.
+• Element: part of a block that has no standalone meaning.
+• Modifier: a different version of a block or element.
+
+
+7-1 Pattern 
+
+7 different folders for partial Sass files, and 1 main Sass file to import all other files into a compiled CSS style-sheet.
+
+• base/
+• component/
+• layout/
+• pages/
+• themes/
+• abstracts/
+• vendors/ 
