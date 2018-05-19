@@ -6,7 +6,6 @@
     left: 0;
     background-color: rgba($color-grey, .8);
     z-index: 9999;
-
     &__content {
         width: 75%;
         height: 50rem;
@@ -15,6 +14,9 @@
         @include absCenter;
         z-index: 9998;
         border-radius: .3rem;
+        
     }
 
+
+   
 }
