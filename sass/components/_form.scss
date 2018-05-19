@@ -14,10 +14,12 @@
         border-bottom: .3rem solid transparent;
         width: 90%;
         display: block;
+        -webkit-transition: all .5s;
         transition: all .5s;
         &:focus {
             outline: none;
-            box-shadow: 0 1rem 2rem rgba($color-black, .1);
+            -webkit-box-shadow: 0 1rem 2rem rgba($color-black, .1);
+                    box-shadow: 0 1rem 2rem rgba($color-black, .1);
             border-bottom: .3rem solid $color-primary;
         }
 
@@ -35,13 +37,15 @@
         margin-left: 2rem;
         margin-top: .75rem;
         display: block;
+        -webkit-transition: all .5s;
         transition: all .5s;
     }
      
     &__input:placeholder-shown + &__label {
         opacity: 0;
         visibility: hidden;
-        transform: translateY(-4rem);
+        -webkit-transform: translateY(-4rem);
+                transform: translateY(-4rem);
     }
 
     &__radio-group {
@@ -79,9 +83,11 @@
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50%, -50%); 
+            -webkit-transform: translate(-50%, -50%);
+                    transform: translate(-50%, -50%); 
             background-color: $color-primary;
             opacity: 0;
+            -webkit-transition: opacity .2s;
             transition: opacity .2s;
         }
     }
