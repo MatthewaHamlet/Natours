@@ -13,6 +13,25 @@
 .col-5 {
   width: 100%; }
 
+/*
+0 - 600px:      Phone
+600 - 900:      Tablet portrait 
+900 - 1200:     Tablet landscape 
+[1200 - 1800] Normal styles apply
+1800 + :        Big desktop
+
+$breakpoint argument choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+Order: 
+- Base + Typography 
+- General layout + grid
+- Page layout 
+- Components 
+*/
 /* ----------Color variables----------- */
 /* ----------Grid variables----------- */
 /* ----------Font variables----------- */
@@ -105,10 +124,23 @@
 
 html {
   font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 50%; } }
 
 body {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  padding: 3rem; }
+  @media (max-width: 56.25em) {
+    body {
+      padding: 0; } }
 
 body {
   font-family: 'Lato';
@@ -116,7 +148,6 @@ body {
   /* font-size: 16px; */
   line-height: 1.7;
   color: #777;
-  padding: 3rem;
   -webkit-box-sizing: border-box;
   box-sizing: border-box; }
 
@@ -134,6 +165,10 @@ body {
     -webkit-animation: moveInLeft 1s ease-out;
     animation: moveInLeft 1s ease-out;
     /* animation: name duration timing-function delay iteration-count direction fill-mode; */ }
+    @media (max-width: 37.5em) {
+      .heading-primary--main {
+        letter-spacing: 1rem;
+        font-size: 5rem; } }
   .heading-primary--sub {
     display: block;
     font-size: 2rem;
@@ -141,6 +176,9 @@ body {
     letter-spacing: 1.74rem;
     -webkit-animation: moveInRight 1s ease-out;
     animation: moveInRight 1s ease-out; }
+    @media (max-width: 37.5em) {
+      .heading-primary--sub {
+        letter-spacing: .5rem; } }
 
 .heading-secondary {
   font-size: 3.5rem;
@@ -154,6 +192,12 @@ body {
   letter-spacing: .2rem;
   -webkit-transition: all .2s;
   transition: all .2s; }
+  @media (max-width: 56.25em) {
+    .heading-secondary {
+      font-size: 3rem; } }
+  @media (max-width: 37.5em) {
+    .heading-secondary {
+      font-size: 2.5rem; } }
   .heading-secondary:hover {
     -webkit-transform: skewY(2deg) skewX(15deg) scale(1.1);
     transform: skewY(2deg) skewX(15deg) scale(1.1);
@@ -683,6 +727,12 @@ body {
   margin: 0 auto; }
   .row:not(:last-child) {
     margin-bottom: 8rem; }
+    @media (max-width: 56.25em) {
+      .row:not(:last-child) {
+        margin-bottom: 6rem; } }
+  @media (max-width: 56.25em) {
+    .row {
+      max-width: 50rem; } }
   .row::after {
     content: "";
     display: table;
@@ -691,6 +741,13 @@ body {
     float: left; }
     .row [class^="col-"]:not(:last-child) {
       margin-right: 6rem; }
+      @media (max-width: 56.25em) {
+        .row [class^="col-"]:not(:last-child) {
+          margin-right: 0;
+          margin-bottom: 6rem; } }
+    @media (max-width: 56.25em) {
+      .row [class^="col-"] {
+        width: 100%  !important; } }
   .row .col-1-of-2 {
     width: calc((100% - 6rem) / 2); }
   .row .col-1-of-3 {
